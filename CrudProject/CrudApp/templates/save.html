@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+        body{
+            background:#ddd
+        }
+
+   .form_wrap{
+             position: relative;
+             left: 30%;
+             top:40px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+ <h3 class="text-center">Information Save</h3>
+
+
+
+    <div class="form_wrap">
+
+
+    <form action="/save" method="POST" class="post-form">
+        {% csrf_token %}
+
+         <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Student Name</label>
+            <div class="col-sm-4">
+                {{form.Name}}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Student Roll</label>
+            <div class="col-sm-4">
+                {{form.Roll}}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Student RegNo</label>
+            <div class="col-sm-4">
+                {{form.RegNo}}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Contact No</label>
+            <div class="col-sm-4">
+                {{form.ContactNo}}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">ContactAddress</label>
+            <div class="col-sm-4">
+                {{form.ContactAddress}}
+            </div>
+        </div>
+
+         <div class="form-group row">
+            <label class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+               <button type="submit" class="btn btn-secondary">Save</button>
+                <a href="/" class="btn btn-info ml-5">Back</a>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+
+
+
+</body>
+</html>

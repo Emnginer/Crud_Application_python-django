@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+ <h2 class="text-center text-uppercase font-weight-bold mb-3">Student Information</h2>
+
+<div class="container bg-secondary text-white">
+    <table class="table table-bordered table-sm">
+        <thead>
+              <tr>
+                  <th>Student ID</th>
+                  <th>Name</th>
+                  <th>Roll</th>
+                  <th>Reg. No</th>
+                  <th>Contact No</th>
+                  <th>Contact Address</th>
+                  <th>Actions</th>
+            </tr>
+        </thead>
+
+      <tbody>
+       {% for student in students %}
+        <tr>
+            <td>{{student.StudentID}}</td>
+            <td>{{student.Name}}</td>
+            <td>{{student.Roll}}</td>
+            <td>{{student.RegNo}}</td>
+            <td>{{student.ContactNo}}</td>
+            <td>{{student.ContactAddress}}</td>
+            <td>
+                <a href="/edit/{{student.StudentID}}" class="btn btn-info">Edit</a>
+                <a href="/delete/{{student.StudentID}}" onclick="return confirm('atelhlkfh')" class="btn btn-info">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+
+</div>
+
+<center>
+    <a href="/save" class="btn btn-secondary mt-2 mb-5">Add Trainee Information</a>
+</center>
+
+
+</body>
+</html>

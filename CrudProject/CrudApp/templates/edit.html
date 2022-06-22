@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+ <style>
+        body{
+            background:#ddd
+        }
+
+   .container{
+             position: relative;
+             left: 25%;
+             top:40px;
+
+        }
+
+
+    </style>
+
+
+
+<body>
+ <h3 class="text-center">Information Update</h3>
+
+
+<div class="container">
+    <form action="/update/{{students.StudentID}}" method="POST" class="post-form">
+        {% csrf_token %}
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Student ID</label>
+            <div class="col-sm-4">
+                <input type="text" name="StudentID" id="id_StudentID" readonly value="{{students.StudentID}}">
+            </div>
+        </div>
+<!--{{students.StudentID}} this students come from views.py(updateStudent functions),,,because student_id put in students variable-->
+
+         <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Student Name</label>
+            <div class="col-sm-4">
+                <input type="text" name="Name" id="id_Name" value="{{students.Name}}">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Student Roll</label>
+            <div class="col-sm-4">
+                <input type="text" name="Roll" id="id_Roll" value="{{students.Roll}}">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Student RegNo</label>
+            <div class="col-sm-4">
+                <input type="text" name="RegNo" id="id_RegNo" value="{{students.RegNo}}">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Contact No</label>
+            <div class="col-sm-4">
+                <input type="text" name="ContactNo" id="id_ContactNo" value="{{students.ContactNo}}">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">ContactAddress</label>
+            <div class="col-sm-4">
+                <input type="text" name="ContactAddress" id="id_ContactAddress" value="{{students.ContactAddress}}">
+            </div>
+        </div>
+
+         <div class="form-group row">
+            <label class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+               <button type="submit" class="btn btn-secondary">Update</button>
+                <a href="/" class="btn btn-info ml-5">Back</a>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+
+
+
+</body>
+</html>
